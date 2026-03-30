@@ -1,9 +1,5 @@
-// Button.jsx
+import styles from './Button.module.css'
 
-import React from 'react';
-
-const Button = (props) => {
-    return <button {...props} />;
-};
-
-export default Button;
+export default function Button(props) {
+  return <button type="button" className={styles.btn} {...props} />
+}

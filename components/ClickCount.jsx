@@ -1,16 +1,11 @@
-// ClickCount.jsx
+import { useCallback, useState } from 'react'
+import Button from './Button.jsx'
 
-import React, { useState } from 'react';
+export default function ClickCount() {
+  const [count, setCount] = useState(0)
+  const increment = useCallback(() => {
+    setCount((v) => v + 1)
+  }, [setCount])
 
-const ClickCount = () => {
-    const [count, setCount] = useState(0);
-
-    return (
-        <div>
-            <h1>Click Count: {count}</h1>
-            <button onClick={() => setCount(count + 1)}>Click me!</button>
-        </div>
-    );
-};
-
-export default ClickCount;
+  return <Button onClick={increment}>Clicks: {count}</Button>
+}
